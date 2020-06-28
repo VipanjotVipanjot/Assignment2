@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Assignment2Library.Models.usersTable>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover sortable">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookTable.name)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.firstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.lastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.phoneNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.bookTable.name)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.userId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.userId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.userId })
+    </td>
+</tr>
+}
+
+</table>

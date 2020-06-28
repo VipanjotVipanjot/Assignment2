@@ -1,0 +1,67 @@
+﻿@model Assignment2Library.Models.bookTable
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>bookTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.authorTable.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.authorTable.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publisherTable.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publisherTable.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.readType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.readType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publishDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bookId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
